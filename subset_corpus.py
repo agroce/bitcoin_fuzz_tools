@@ -53,6 +53,10 @@ def files_ok(fuzz_cmd, timeout, files, new_corpus_dir):
         os.remove(os.path.join(new_corpus_dir, os.path.basename(f)))
     finish = time.time()
     print("ANALYZED", len(files), "IN", round(finish - start, 2), "SECONDS")
+    if (r == 0):
+        print("ALL TESTS PASS")
+    else:
+        print("SOME TESTS FAIL")
     return (r == 0)
 
 
@@ -98,12 +102,17 @@ while len(unknown) > 0:
         ok = files_ok(fuzz_cmd, timeout, s, new_corpus_dir)
         if ok:
             copied += len(s)
+            ok_files.extend(s)
         else:
             if len(s) > 1:
                 unknown.extend(s)
             else:
                 skipped += 1
+                bad_files.extend(s)
     sys.stdout.flush()
+
+for f in ok_files:
+    shutil.copyfile(f, os.path.join(new_corpus_dir, os.path.basename(f)))
 
 print("THERE WERE", skipped, "DETECTING INPUTS")
 print("FINISHED, NEW CORPUS HAS", copied, "FILES")
