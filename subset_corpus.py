@@ -88,7 +88,7 @@ split_size = 4 # Initially let's just quarter the corpus
 copied = 0
 skipped = 0
 while len(unknown) > 0:
-    splits = make_splits(unknown, SPLIT_SIZE)
+    splits = make_splits(unknown, split_size)
     unknown = []
     for s in splits:
         ok = files_ok(fuzz_cmd, timeout, s, new_corpus_dir)
