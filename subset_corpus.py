@@ -69,8 +69,8 @@ fuzz_cmd = sys.argv[1] # Assume appending filename to the end of this will fuzz 
 timeout = int(sys.argv[2])
 corpus_dir = sys.argv[3]
 new_corpus_dir = sys.argv[4]
-min_skipped = sys.argv[5]
-min_new_corpus_size = sys.argv[6]
+min_skipped = int(sys.argv[5])
+min_new_corpus_size = int(sys.argv[6])
 
 files = glob.glob(corpus_dir + "/*")
 print("SUBSETTING CORPUS WITH", len(files), "FILES...")
@@ -88,8 +88,8 @@ SPLIT_SIZE = 4 # Initially let's just quarter the corpus
 copied = 0
 skipped = 0
 while len(unknown) > 0:
-    unknown = []
     splits = make_splits(unknown, SPLIT_SIZE)
+    unknown = []
     for s in splits:
         ok = files_ok(fuzz_cmd, timeout, s, new_corpus_dir)
         if ok:
