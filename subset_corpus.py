@@ -87,11 +87,15 @@ if not os.path.exists(new_corpus_dir):
 copied = 0
 skipped = 0
 for f in files:
+    start = time.time()
     r = silent_run_with_timeout(fuzz_cmd + " " + f, timeout, False)
+    finish = time.time()
+    print("ANALYZED", f, "IN", round(finish - start, 2), "SECONDS")
     if r == 0:
         shutil.copyfile(f, os.path.join(new_corpus_dir, os.path.basename(f)))
         copied += 1
     else:
+        print(f, "DETECTS THE MUTANT!")
         skipped += 1
 sys.stdout.flush()
 
