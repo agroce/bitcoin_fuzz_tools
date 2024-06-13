@@ -83,7 +83,7 @@ ok_files = []
 bad_files = []
 unknown = files
 
-SPLIT_SIZE = 4 # Initially let's just quarter the corpus
+split_size = 4 # Initially let's just quarter the corpus
 
 copied = 0
 skipped = 0
@@ -102,6 +102,7 @@ while len(unknown) > 0:
                 skipped += 1
                 bad_files.extend(s)
     sys.stdout.flush()
+    split_size *= 2
 
 for f in ok_files:
     shutil.copyfile(f, os.path.join(new_corpus_dir, os.path.basename(f)))
