@@ -11,10 +11,8 @@ class TimeoutException(Exception):
     """"Exception thrown when timeouts occur"""
 
 
-def silent_run_with_timeout(cmd, timeout, verbose):
+def silent_run_with_timeout(cmd, timeout):
     dnull = open(os.devnull, 'w')
-    if verbose:
-        print("EXECUTING", cmd)
     start_P = time.time()
     try:
         with open("cmd_errors.txt", 'w') as cmd_errors:
@@ -29,16 +27,10 @@ def silent_run_with_timeout(cmd, timeout, verbose):
                 cmd_errors_out = cmd_errors.read()
             except:
                 cmd_errors_out = "ERROR READING OUTPUT"
-        if verbose and len(cmd_errors_out) > 0:
-            print("OUTPUT (TRUNCATED TO LAST 20 LINES):")
-            print("\n".join(cmd_errors_out.split("\n")[-20:]))
     finally:
         if P.poll() is None:
             print("KILLING SUBPROCESS DUE TO TIMEOUT")
             os.killpg(os.getpgid(P.pid), signal.SIGTERM)
-    if verbose:
-        print("COMPLETE IN", round(time.time() - start_P, 2), "SECONDS")
-        print("*" * 30)
 
     return P.returncode
 
