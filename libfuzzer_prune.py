@@ -45,7 +45,7 @@ if not os.path.exists(new_corpus_dir):
 with open(os.path.join(new_corpus_dir, "test"), 'w') as f:
     f.write("0")
 
-(r, output) = silent_run_with_timeout(fuzz_cmd + " " + os.path.join(new_corpus_dir, "test"), timeout)
+(output, r) = silent_run_with_timeout(fuzz_cmd + " " + os.path.join(new_corpus_dir, "test"), timeout)
 os.remove(os.path.join(new_corpus_dir, "test"))
 if r != 0:
     print("MUTANT KILLED WITH TEST INPUT")
