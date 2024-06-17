@@ -13,8 +13,8 @@ data = {}
 for mode in modes:
     data[mode] = []
 
-mutants = glob.glob(mutant_dir + "/survived_*")
-mutants.extend(glob.glob(mutant_dir + "killed_*"))
+mutants = glob.glob(mutant_dir + "/killed_*")
+mutants.extend(glob.glob(mutant_dir + "/survived_*"))
 
 for m in mutants:
     dir = os.path.basename(m) + "_pruned"
@@ -33,7 +33,10 @@ for r in range(RUNS):
     for m in mutants:
         for mode in modes:
             print("RUNNING", m, mode)
-            shutil.rmtree("this_corpus")
+            try:
+                shutil.rmtree("this_corpus")
+            except FileNotFoundError:
+                pass
             shutil.copytree(os.path.basename(m) + "_pruned", "this_corpus")
             start = time.time()        
             subprocess.call([m + " " + mode + " this_corpus"], shell=True)
