@@ -42,7 +42,7 @@ for r in range(RUNS):
             subprocess.call([m + " " + mode + " this_corpus"], shell=True)
             finish = time.time()
             print("FINISHED IN", round(finish-start, 2))
-            data[mode].appedn(finish-start)
+            data[mode].append((m, finish-start))
             print(mode, data[mode])
         
 for mode in modes:
