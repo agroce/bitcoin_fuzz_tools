@@ -6,6 +6,10 @@ import sys
 import time
 
 mutant_dir = sys.argv[1]
+if len(sys.argv > 2):
+    extra_args = sys.argv[2]
+else:
+    extra_args = ""
 
 modes = ["", "-use_value_profile=1"]
 
@@ -39,11 +43,13 @@ for r in range(RUNS):
                 pass
             shutil.copytree(os.path.basename(m) + "_pruned", "this_corpus")
             start = time.time()        
-            subprocess.call([m + " " + mode + " this_corpus"], shell=True)
+            subprocess.call([m + " " + mode + " " + extra_args + " this_corpus"], shell=True)
             finish = time.time()
             print("FINISHED IN", round(finish-start, 2))
             data[mode].append((m, finish-start))
-            print(mode, data[mode])
+            print("RESULTS SO FAR:")
+            for fm in data:
+                print(fm, data[fm])
         
 for mode in modes:
     print(mode, data[mode])
