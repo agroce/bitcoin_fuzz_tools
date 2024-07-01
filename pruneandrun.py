@@ -6,7 +6,7 @@ import sys
 import time
 
 mutant_dir = sys.argv[1]
-if len(sys.argv > 2):
+if len(sys.argv) > 2:
     extra_args = sys.argv[2]
 else:
     extra_args = ""
