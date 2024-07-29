@@ -1,0 +1,5 @@
+<void WriteCompactSize<ParamsStream<SizeComputer&, TransactionSerParams> >(ParamsStream<SizeComputer&, TransactionSerParams>&, unsigned long)>
+474
+2
+15
+132

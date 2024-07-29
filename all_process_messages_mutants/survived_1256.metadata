@@ -1,0 +1,5 @@
+<CalculateLockPointsAtTip(CBlockIndex*, CCoinsView const&, CTransaction const&)>
+5660
+2
+144
+233

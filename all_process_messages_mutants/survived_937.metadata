@@ -1,0 +1,4 @@
+<void (anonymous namespace)::PeerManagerImpl::MakeAndPushMessage<CBlockHeaderAndShortTxIDs&>(CNode&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, CBlockHeaderAndShortTxIDs&) const>
+90
+1
+116

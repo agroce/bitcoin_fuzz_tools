@@ -1,0 +1,5 @@
+<NetPermissionFlags ConsumeWeakEnum<NetPermissionFlags, 10ul>(FuzzedDataProvider&, NetPermissionFlags const (&) [10ul])>
+1212
+2
+15
+133
