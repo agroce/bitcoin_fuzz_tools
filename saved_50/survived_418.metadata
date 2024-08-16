@@ -1,0 +1,5 @@
+<LockedPoolManager::LockedPoolManager(std::unique_ptr<LockedPageAllocator, std::default_delete<LockedPageAllocator> >)>
+85
+2
+15
+132

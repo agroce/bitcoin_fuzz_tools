@@ -1,0 +1,4 @@
+<(anonymous namespace)::MultisigDescriptor::MultisigDescriptor(int, std::vector<std::unique_ptr<(anonymous namespace)::PubkeyProvider, std::default_delete<(anonymous namespace)::PubkeyProvider> >, std::allocator<std::unique_ptr<(anonymous namespace)::PubkeyProvider, std::default_delete<(anonymous namespace)::PubkeyProvider> > > >, bool)>
+85
+1
+116

@@ -1,0 +1,5 @@
+<ChaCha20::Crypt(Span<std::byte const>, Span<std::byte>)>
+2036
+2
+15
+132

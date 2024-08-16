@@ -1,0 +1,4 @@
+<(anonymous namespace)::WSHDescriptor::MakeScripts(std::vector<CPubKey, std::allocator<CPubKey> > const&, Span<CScript const>, FlatSigningProvider&) const>
+91
+1
+116

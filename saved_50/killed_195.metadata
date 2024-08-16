@@ -1,0 +1,5 @@
+<(anonymous namespace)::DescriptorImpl::DescriptorImpl(std::vector<std::unique_ptr<(anonymous namespace)::PubkeyProvider, std::default_delete<(anonymous namespace)::PubkeyProvider> >, std::allocator<std::unique_ptr<(anonymous namespace)::PubkeyProvider, std::default_delete<(anonymous namespace)::PubkeyProvider> > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)>
+80
+2
+15
+132
