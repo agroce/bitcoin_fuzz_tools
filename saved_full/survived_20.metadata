@@ -1,0 +1,4 @@
+<unsigned int ReadVarInt<HashVerifier<AutoFile>, (VarIntMode)0, unsigned int>(HashVerifier<AutoFile>&)>
+1080
+1
+117

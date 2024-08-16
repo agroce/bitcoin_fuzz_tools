@@ -1,0 +1,9 @@
+<void SerializeMany<ParamsStream<HashWriter&, TransactionSerParams>, COutPoint, CScript, unsigned int>(ParamsStream<HashWriter&, TransactionSerParams>&, COutPoint const&, CScript const&, unsigned int const&)>
+385
+6
+144
+144
+144
+144
+144
+144

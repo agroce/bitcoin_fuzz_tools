@@ -1,0 +1,4 @@
+<GetScriptForDestination(std::variant<CNoDestination, PubKeyDestination, PKHash, ScriptHash, WitnessV0ScriptHash, WitnessV0KeyHash, WitnessV1Taproot, PayToAnchor, WitnessUnknown> const&)>
+60
+1
+117
