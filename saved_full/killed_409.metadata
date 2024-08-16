@@ -1,0 +1,5 @@
+<ConstructPubKeyBytes(FuzzedDataProvider&, Span<unsigned char const>, bool)>
+86
+2
+144
+144

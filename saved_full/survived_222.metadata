@@ -1,0 +1,4 @@
+<RPCHelpMan::RPCHelpMan(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::vector<RPCArg, std::allocator<RPCArg> >, RPCResults, RPCExamples, std::function<UniValue (RPCHelpMan const&, JSONRPCRequest const&)>)>
+79
+1
+117
